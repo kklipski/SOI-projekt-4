@@ -28,21 +28,21 @@ end;
 
 Do realizacji monitora służy specjalna biblioteka realizująca następujące elementy monitora, odwołujące się do wskazanych miejsc w kodzie:
 
-Ad 1. Typ "mon" służący do "powoływania" monitorów, w szczególności zawierających zmienną semaforową do wzajemnego wykluczania "mutex". Każdy monitor musi zawierać dokładnie jedną zmienną typu "mon": *m:mon*;
+**Ad 1.** Typ "mon" służący do "powoływania" monitorów, w szczególności zawierających zmienną semaforową do wzajemnego wykluczania "mutex". Każdy monitor musi zawierać dokładnie jedną zmienną typu "mon": *m:mon*;
 
-Ad 2. Typ warunków Hoare'a, pozwalający na powoływanie warunków synchronizujących;
+**Ad 2.** Typ warunków Hoare'a, pozwalający na powoływanie warunków synchronizujących;
 
-Ad 3. Wejście do monitora "enter". Musi być umieszczone na początku każdej metody monitora i tylko tam: *enter(m)*;
+**Ad 3.** Wejście do monitora "enter". Musi być umieszczone na początku każdej metody monitora i tylko tam: *enter(m)*;
 
-Ad 4. Zawieszenie na warunku: *wait(ci)*;
+**Ad 4.** Zawieszenie na warunku: *wait(ci)*;
 
-Ad 5. Badanie niepustości warunku: *empty(cj)*;
+**Ad 5.** Badanie niepustości warunku: *empty(cj)*;
 
-Ad 6. Wznawianie procesu: *signal(cj)*;
+**Ad 6.** Wznawianie procesu: *signal(cj)*;
 
-Ad 7. Wyjście z monitora "leave". Musi być umieszczone na końcu każdej metody monitora i tylko tam: *leave(m)*;
+**Ad 7.** Wyjście z monitora "leave". Musi być umieszczone na końcu każdej metody monitora i tylko tam: *leave(m)*;
 
-Ad 8. Inicjowanie monitora i zmiennych warunkowych: *initm(m)*, *initc(c1,m)*, ...;
+**Ad 8.** Inicjowanie monitora i zmiennych warunkowych: *initm(m)*, *initc(c1,m)*, ...;
 
 ### Zadanie do zrealizowania
 Należy zrealizować typ "bufor komunikacyjny" przy pomocy monitora. W czasie implementacji należy zapewnić synchronizację taką samą jak w ćwiczeniu 3. Należy zrealizować więzy pomiędzy buforami, te same co w ćwiczeniu 3., zmodyfikowane o dodatkowe warunki wskazane dla ćwiczenia 4. przez prowadzącego.
